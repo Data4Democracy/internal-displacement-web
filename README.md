@@ -23,6 +23,14 @@ yarn install
 ```shell-script
   PORT=<PORT_NUMBER> npm run start
 ```
+where <PORT_NUMBER> is the port of your choice. e.g.
+```shell-script
+PORT=3000 npm run start
+```
+Once it starts you should be able to go to
+http://localhost:<PORT_NUMBER>
+if you used 3000 the port number. You should be able to view the application locally in a browser at http://localhost:3000/
+
 ## Testing
 To run tests once run the following command
 ```
