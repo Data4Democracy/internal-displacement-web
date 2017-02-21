@@ -41,7 +41,7 @@ To run tests continuously run the following command
 npm run test:watch
 ```
 ### Build
-To build and create a minified version for deployment.
+To build and create a minified version for deployment. it will update or create a folder named dist in the project root
 ```shell-script
 npm run build
 ```
