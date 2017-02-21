@@ -37,9 +37,9 @@ To run tests once run the following command
     npm run test
 ```
 To run tests continuously run the following command
-    ```shell-script
+```shell-script
 npm run test:watch
-    ```
+```
 ### Build
 To build and create a minified version for deployment.
 ```shell-script
