@@ -5,7 +5,40 @@ A web application front-end for the Internal Displacement visualization tool, us
 ## Pre-requisites
 You will need [node.js](https://nodejs.org) and a package manager ([yarn](https://yarnpkg.com) or npm which comes with node)
 
-## How to run it locally
+## How to run it in Docker
+Docker creates an isolated runtime environment so you don't need to install any of the dependencies locally.
+The project will eventually be deployed to a cloud host (like AWS) using a Docker container.
+
+1. Clone the repository from GitHub
+```shell-script
+  git clone git@github.com:Data4Democracy/internal-displacement-web.git
+```
+2. Build Docker container
+```shell-script
+  cd internal-displocement-web
+  docker build -t internal-displacement-web .
+```
+3. Run the container
+```shell-script
+  docker run -v $PWD:/project -p 3000:80 internal-displacement-web
+```
+The `-v $PWD:/project` argument maps the current directory into the Docker container, so any changes
+you make will be reflected on the running server.
+
+The `-p 3000:80` argument controls what local port the server is available at.
+Change the `3000` to use a different port.
+
+4. You can now see the site on at http://localhost:3000
+
+## Testing
+You can run the tests with
+```shell-script
+docker run -it -v $PWD:/project internal-displacement-web npm run test
+```
+
+
+
+## How to run it locally if you already have Node & NPM
 1. Clone the repository from GitHub
 ```shell-script
   git clone git@github.com:Data4Democracy/internal-displacement-web.git
