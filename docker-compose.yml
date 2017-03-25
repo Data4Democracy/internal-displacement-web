@@ -1,0 +1,17 @@
+internal-displacement-web:
+    build: .
+    ports: 
+        - "3000:80"
+    volumes:
+        - .:/internal-displacement-web/:rw
+    command: >
+          sh -c '
+          if test -d node_modules;
+          then
+              echo node_modules_exists ;
+          else
+              cp -a /tmp/node_modules /internal-displacement-web/;
+          fi && 
+          npm install && 
+          npm run start
+          '
